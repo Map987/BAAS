@@ -144,15 +144,15 @@ curl 'https://api.vc.bilibili.com/dynamic_svr/v1/dynamic_svr/create' \
     -b 'SESSDATA={sessdata}'
 """
 
-process = subprocess.Popen(curl_post, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-curl_output, error = process.communicate()
+#process = subprocess.Popen(curl_post, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+#curl_output, error = process.communicate()
 
 # 将输出解码为字符串
-curl_output_str = curl_output.decode('utf-8')
-#print(curl_output_str)
+#curl_output_str = curl_output.decode('utf-8')
+##print(curl_output_str)
 # 使用正则表达式提取cookie值
 ######
-response_json = json.loads(curl_output_str)
+#response_json = json.loads(curl_output_str)
 current_time = datetime.utcnow() + timedelta(hours=8)
 
 # 格式化时间为 "YYYY-MM-DD HH:MM:SS UTC+8"
@@ -167,18 +167,18 @@ except FileNotFoundError:
     lines = []
 
 # 检查 'dynamic_id' 是否在 JSON 响应的 'data' 部分
-if 'dynamic_id' in response_json.get('data', {}):
-    status_message = "cookie成功"
-else:
-    status_message = "cookie失败"
-first_line = f"{formatted_time} - {status_message}\n"
+#if 'dynamic_id' in response_json.get('data', {}):
+#    status_message = "cookie成功"
+#else:
+#    status_message = "cookie失败"
+#first_line = f"{formatted_time} - {status_message}\n"
 
 # 将新时间添加到文件的第一行
-lines.insert(0, first_line)
+#lines.insert(0, first_line)
 
 # 写回文件
-with open(log_filename, 'w') as file:
-    file.writelines(lines)
+#with open(log_filename, 'w') as file:
+#    file.writelines(lines)
 #######    
     # 打印结果
 #print(f"new_sessdata = {sessdata}")
