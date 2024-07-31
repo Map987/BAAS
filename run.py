@@ -89,7 +89,7 @@ curl_output, error = curlout.communicate()
 
 # 将输出解码为字符串
 curl_output_ = curl_output.decode('utf-8')
-print(curl_output_)
+#print(curl_output_)
 match = re.search(r'<div id="1-name">([\s\S]+?)</div>', curl_output_)
 if match:
     token = match.group(1).strip()  # 去除可能存在的空白字符
@@ -109,7 +109,7 @@ curl -i 'https://passport.bilibili.com/x/passport-login/web/cookie/refresh' \
  --data-urlencode "refresh_token={refresh_token}" \
  -b "SESSDATA={sessdata}"
 """
-print(curl_command)
+#print(curl_command)
 # 执行命令并捕获输出
 process = subprocess.Popen(curl_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 curl_output, error = process.communicate()
@@ -149,7 +149,7 @@ curl_output, error = process.communicate()
 
 # 将输出解码为字符串
 curl_output_str = curl_output.decode('utf-8')
-print(curl_output_str)
+#print(curl_output_str)
 # 使用正则表达式提取cookie值
 ######
 response_json = json.loads(curl_output_str)
