@@ -24,9 +24,9 @@ jobs:
       - name: Install requirements
         run: |
           python3 -m pip install --upgrade pip
-          pip3 install requests beautifulsoup4 lxml asyncio aiohttp nest_asyncio
+          pip3 install requests beautifulsoup4 lxml asyncio aiohttp nest_asyncio cryptography pycryptodome argparse
       - name: Run
-        run: python3 ./readme.py
+        run: python3 ./run.py --encode_code ${{ secrets.PASSWORD }}
 
 
       - name: Commit
