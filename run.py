@@ -20,7 +20,7 @@ parser = argparse.ArgumentParser()
 #parser.add_argument('--refresh_token', required=True, help='Refresh token')
 parser.add_argument('--encode_code', required=True, help='The encryption password')
 args = parser.parse_args()
-#args = parser.parse_args(['--sessdata', sessdata, '--bili_jct', bili_jct, '--refresh_token', 'refresh_token', '--encode_code', 'qs9BcBGxMv9jfWAC30YAswCSQ6mw2kWJyNEU28bDeKA='])
+#args = parser.parse_args(['--sessdata', sessdata, '--bili_jct', bili_jct, '--refresh_token', refresh_token, '--encode_code', 'qs9BcBGxMv9jfWAC30YAswCSQ6mw2kWJyNEU28bDeKA='])
 
 #sessdata = args.sessdata
 #bili_jct = args.bili_jct
@@ -42,7 +42,7 @@ if os.path.exists(cookie_file_path):
             if key == 'SESSDATA':
                 sessdata = fernet.decrypt(encrypted_value).decode()
 
-                print(f"解码sessdata", sessdata)
+               # print(f"解码sessdata", sessdata)
             elif key == 'BIILI_JCT':
                 bili_jct = fernet.decrypt(encrypted_value).decode()
             elif key == 'REFRESH_TOKEN':
