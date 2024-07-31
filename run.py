@@ -188,7 +188,7 @@ with open(log_filename, 'w') as file:
 encrypted_sessdata = fernet.encrypt(sessdata.encode())
 encrypted_bili_jct = fernet.encrypt(bili_jct.encode())
 encrypted_refresh_token = fernet.encrypt(refresh_token.encode())
-print()
+#print()
 # 保存加密后的cookie值到文件
 with open(cookie_file_path, 'wb') as env_file:
     env_file.write(f"SESSDATA={encrypted_sessdata}\n".encode())
