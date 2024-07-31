@@ -15,16 +15,16 @@ from cryptography.fernet import Fernet
 from datetime import datetime, timedelta
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--sessdata', required=True, help='Session data')
-parser.add_argument('--bili_jct', required=True, help='Bilibili jct')
-parser.add_argument('--refresh_token', required=True, help='Refresh token')
+#parser.add_argument('--sessdata', required=True, help='Session data')
+#parser.add_argument('--bili_jct', required=True, help='Bilibili jct')
+#parser.add_argument('--refresh_token', required=True, help='Refresh token')
 parser.add_argument('--encode_code', required=True, help='The encryption password')
 args = parser.parse_args()
 #args = parser.parse_args(['--sessdata', sessdata, '--bili_jct', bili_jct, '--refresh_token', 'refresh_token', '--encode_code', 'qs9BcBGxMv9jfWAC30YAswCSQ6mw2kWJyNEU28bDeKA='])
 
-sessdata = args.sessdata
-bili_jct = args.bili_jct
-refresh_token = args.refresh_token
+#sessdata = args.sessdata
+#bili_jct = args.bili_jct
+#refresh_token = args.refresh_token
 
 key_bytes = (args.encode_code.encode())
 fernet = Fernet(key_bytes)
